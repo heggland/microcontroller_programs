@@ -3,7 +3,7 @@ from time import sleep
 import time
 
 moisture_adc = ADC(Pin(26))
-pump_pin = Pin(16, Pin.OUT)
+pump_pin = Pin(18, Pin.OUT)
 moisture_lvl = 53000; 
 
 
