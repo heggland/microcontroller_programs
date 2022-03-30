@@ -19,6 +19,10 @@ Logikken som  trengs: Om en ID brikke med idTag= UID17f9bddbb10 blir plassert ov
 // Instance
 MFRC522 rfid(SS_PIN, RST_PIN);
 
+// simpel database
+String tagDatabase[] = {"UID17f9bddbb10", "12345678"};
+
+// tagID holder
 String tagID = "";
 
 void setup()
@@ -69,9 +73,9 @@ boolean getID()
 void authorized()
 {
     digitalWrite(RELAY_PIN, HIGH);
-    delay(1000);
+    delay(5000);
     digitalWrite(RELAY_PIN, LOW);
-    delay(1000);
+    tagID = "";
 }
 
 void notAuthorized()
@@ -79,11 +83,7 @@ void notAuthorized()
     digitalWrite(LED_RED_PIN, HIGH);
     delay(1000);
     digitalWrite(LED_RED_PIN, LOW);
-    delay(1000);
 }
-
-// simpel database
-String tagDatabase[] = {"UID17f9bddbb10", "12345678"};
 
 // check if tag is in the database
 bool tagIsInDatabase(String tag)
