@@ -1,5 +1,5 @@
 - Automatic watering system
-written with micropython
+written with micropython for raspberry pico
 
 
 moisture_lvl = the max dry limit in the soil
